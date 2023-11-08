@@ -1,0 +1,714 @@
+
+/* -------------------------------------------------------------- */
+/* Style for head [content -> copied HAPPY BIRTHDAY] */
+/* -------------------------------------------------------------- */
+
+main .head {
+	display: flex;
+	min-height: 10vw;
+	/* width: 100vw; */
+	background: #100f10;
+	align-items: center;
+	justify-content: center;
+    margin-bottom: 30px;
+}
+
+
+.head h2 {
+	color: #c19bf5;
+	font-size: 10vw;
+	margin: 0;
+	position: relative;
+	text-transform: uppercase;
+	font-family: "Poppins", sans-serif;
+	-webkit-text-stroke: 0.3vw #f7f7fe;
+}
+
+.head h2::before {
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 100%;
+	color: #8338ec;
+	overflow: hidden;
+	position: absolute;
+	content: attr(data-text);
+	border-right: 2px solid #c19bf5;
+	-webkit-text-stroke: 0vw #f7f7fe;
+	animation: animate 6s linear infinite;
+}
+
+@keyframes animate {
+	0%,
+	10%,
+	100% {
+		width: 0;
+	}
+
+	70%,
+	90% {
+		width: 100%;
+	}
+}
+
+
+
+/* -------------------------------------------------------------- */
+/* Style for container-1 [content -> bootstrap carousel] */
+/* -------------------------------------------------------------- */
+.container-1 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 80px 0px 50px;
+}
+
+.container-1 .carousel-inner{
+    border-radius: 15px;
+}
+
+.container-1 .slider , .carousel-item img{
+    height:28vw;
+    width: 45vw;
+    margin: 0px;
+    /* border-radius: 15px; */
+}
+
+.container-1 .carousel-indicators{
+    margin-bottom: 1.2vw;
+}
+
+.container-1 .carousel-indicators [data-bs-target]{
+    width: 1.8vw;
+    height: 0.12vw;
+    background-color: antiquewhite;
+}
+
+/*Media quary for responsive website*/
+/*For first slider*/
+
+@media only screen and (max-width:850px){
+    .container-1 .slider , .carousel-item img{
+        height:40vw;
+        width: 65vw;
+    }
+
+    .container-1 .slider .carousel-control-prev,
+    .container-1 .slider .carousel-control-next{
+        display: none;
+    }
+}
+
+
+
+/* -------------------------------------------------------------- */
+/* Style for container-2 [content -> copied loader] */
+/* -------------------------------------------------------------- */
+
+.container-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 10vh;
+    margin: 10px 0px;
+}
+
+.container-2 .loader {
+    display: flex;
+    flex-direction: row;
+}
+
+.container-2 .loader div {
+    position: relative;
+    width: 18px;
+    height: 60px;
+    margin: 30px 10px;
+    overflow: hidden;
+    border-radius: 40px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5));
+    border: 2px solid #272727;
+    box-shadow: -1px -1px 5px rgba(92, 92, 92, 0.1), 2px 2px 10px rgba(0, 0, 0, 0.4), inset -1px -1px 5px rgba(82, 82, 82, 0.2), inset 2px 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.container-2 .loader div::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    border-radius: 40px;
+    box-shadow: -1px -1px 1px rgba(92, 92, 92, 0.1), 2px 2px 4px rgba(0, 0, 0, 0.4), inset -1px -1px 1px rgba(82, 82, 82, 0.2), inset 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.container-2 .loader div::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 15px;
+    height: 24px;
+    background: #343434;
+    border-radius: 50%;
+    box-shadow: inset -5px -5px 5px rgba(0, 0, 0, 0.2), 0 420px 0 400px #ffe700;
+    animation: animate-loader 2.5s ease-in-out infinite;
+    transform: translateY(160px);
+    animation-delay: calc(-0.5s * var(--i));
+}
+
+@keyframes animate-loader {
+    0% {
+        transform: translateY(160px);
+        filter: hue-rotate(180deg);
+    }
+
+    50% {
+        transform: translateY(0px);
+    }
+
+    100% {
+        transform: translateY(160px);
+        filter: hue-rotate(0deg);
+    }
+}
+
+@media only screen and (max-width:550px){
+    .container-2 .loader div {
+        width: 3vw;
+        height: 10vw;
+        margin: 20px 7px;
+        border: 1px solid #272727;
+        /* box-shadow: -5px -5px 5px rgba(92, 92, 92, 0.1), 10px 10px 10px rgba(0, 0, 0, 0.4), inset -5px -5px 5px rgba(82, 82, 82, 0.2), inset 10px 10px 10px rgba(0, 0, 0, 0.4); */
+    }
+
+    .container-2 .loader div::before {
+        box-shadow: -1px -1px 1px rgba(92, 92, 92, 0.1), 2px 2px 2px rgba(0, 0, 0, 0.4), inset -1px -1px 1px rgba(82, 82, 82, 0.2), inset 2px 2px 2px rgba(0, 0, 0, 0.4);
+    }
+
+    .container-2 .loader div::after {
+        width: 2.7vw;
+        height: 5vw;
+    }
+}
+
+/* -------------------------------------------------------------- */
+/* Style for container-3 [content -> copied bouncing clock] */
+/* -------------------------------------------------------------- */
+
+.container-3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0px 50px;
+}
+
+.container-3 .clock {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.container-3 .clock__block {
+    background-color: hsl(var(--hue), 10%, 90%);
+    border-radius: 0.5rem;
+    box-shadow: 0 1rem 2rem hsla(var(--hue), 90%, 50%, 0.3);
+    font-size: 4.5vw;
+    color: white;
+    line-height: 2;
+    margin: 0.75rem;
+    overflow: hidden;
+    text-align: center;
+    width: 9vw;
+    height: 9vw;
+    transition:
+        background-color var(--trans-dur),
+        box-shadow var(--trans-dur);
+}
+
+.container-3 .clock__block--small {
+    border-radius: 0.25rem;
+    box-shadow: 0 0.5rem 2rem hsla(var(--hue), 90%, 50%, 0.3);
+    font-size: 1.5vw;
+    line-height: 3;
+    width: 4.5vw;
+    height: 4.5vw;
+    margin: 0;
+    overflow: hidden;
+    text-align: center;
+}
+
+.container-3 .clock__colon {
+    display: none;
+    font-size: 2em;
+    opacity: 0.5;
+    position: relative;
+    display: inherit;
+
+}
+
+.container-3 .clock__colon:before,
+.container-3 .clock__colon:after {
+    background-color: currentColor;
+    border-radius: 50%;
+    content: "";
+    display: block;
+    position: absolute;
+    top: -0.05em;
+    left: -0.05em;
+    width: 0.1em;
+    height: 0.1em;
+    transition: background-color var(--trans-dur);
+}
+
+.container-3 .clock__colon:before {
+    transform: translateY(-200%);
+}
+
+.container-3 .clock__colon:after {
+    transform: translateY(200%);
+}
+
+.container-3 .clock__digit-group {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.container-3 .clock__digits {
+    width: 100%;
+    height: 100%;
+}
+
+.container-3 .clock__block--bounce {
+    animation: bounce 0.75s;
+}
+
+.container-3 .clock__block--bounce .clock__digit-group {
+    animation: roll 0.75s ease-in-out forwards;
+    transform: translateY(-50%);
+}
+
+.container-3 .clock__block--delay1,
+.container-3 .clock__block--delay1 .clock__digit-group {
+    animation-delay: 0.1s;
+}
+
+.container-3 .clock__block--delay2,
+.container-3 .clock__block--delay2 .clock__digit-group {
+    animation-delay: 0.2s;
+}
+
+/* Animations */
+@keyframes bounce {
+
+    from,
+    to {
+        animation-timing-function: ease-in;
+        transform: translateY(0);
+    }
+
+    50% {
+        animation-timing-function: ease-out;
+        transform: translateY(15%);
+    }
+}
+
+@keyframes roll {
+    from {
+        transform: translateY(-50%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: hsl(var(--hue), 10%, 10%);
+        --fg: hsl(var(--hue), 10%, 90%);
+    }
+
+    .container-3 .clock__block {
+        background-color: hsl(var(--hue), 90%, 40%);
+        box-shadow: 0 1rem 2rem hsla(var(--hue), 90%, 60%, 0.4);
+    }
+
+    .container-3 .clock__block--small {
+        box-shadow: 0 0.5rem 2rem hsla(var(--hue), 90%, 60%, 0.4);
+    }
+}
+
+/* For mobile */
+@media only screen and (max-width: 768px) {
+    .clock__block {
+        width: 10vw;
+        height: 10vw;
+        font-size: 5vw;
+
+    }
+    
+    .clock__block--small {
+        width: 5vw;
+        height: 5vw;
+        font-size: 1.5vw;
+    }
+}
+
+
+/* -------------------------------------------------------------- */
+/* Style for container-4 [content -> main image & image card] */
+/* -------------------------------------------------------------- */
+
+.container-4 {
+	width: 100vw;
+	margin: 40px 0px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.container-4 .main-image-box{
+	position: relative;
+	z-index: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 202px;
+	width: 202px;
+	background: #fff;
+	margin: 100px auto 10px;
+	border: 5px solid #fff;
+	border-radius: 50%;
+}
+.container-4 .main-image-box:before {
+	content: "";
+	z-index: -1;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: linear-gradient(142deg, #02c3d1 0%, #fffff9 100%);
+	transform: translate3d(0px, 0px, 0) scale(1.11);
+	filter: blur(8px);
+	opacity: var(0.7);
+	transition: opacity 0.3s;
+	border-radius: inherit;
+}
+
+/* 
+* Prevents issues when the parent creates a 
+* stacking context. (For example, using the transform
+* property )
+*/
+.container-4 .main-image-box::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+    background: inherit;
+    border-radius: inherit;
+}
+
+.container-4 .main-image-box img{
+	position: relative;
+	height: 200px;
+	width: 200px;
+	border-radius: 50%;
+}
+
+.container-4 .image-card {
+	margin: 70px 0px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.container-4 .image-card .card-container {
+	width: 1000px;
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.container-4 .image-card .card-container img{
+	width: 100%;
+	height: 100px;
+}
+
+.card-container .card {
+	position: relative;
+	background-color: transparent;
+	border: 0px;
+}
+
+.card-container .card .face {
+	width: 300px;
+	height: 200px;
+	transition: .4s;
+}
+
+.card-container .card .face.face1 {
+	position: relative;
+	background-color: #333;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+	z-index: 1;
+	transform: translateY(100px);
+}
+
+.card-container .card:hover .face.face1 {
+	transform: translateY(0);
+	box-shadow:
+		inset 0 0 60px whitesmoke,
+		inset 20px 0 80px #f0f,
+		inset -20px 0 80px #f0f,
+		inset 20px 0 300px #f0f,
+		inset -20px 0 300px #0ff,
+		0 0 50px #fff,
+		-10px 0 80px #f0f,
+		10px 0 80px #0ff;
+
+}
+
+.card-container .card .face.face1 .content {
+	opacity: .2;
+	transition: 0.5s;
+	text-align: center;
+}
+
+.card-container .card:hover .face.fa1.content {
+	opacity: 1;
+}
+
+.card-container .card .face.face1 .content i {
+	font-size: 3em;
+	color: white;
+	display: inline-block;
+}
+
+.card-container .card .face.face1 .content h3 {
+	font-size: 1em;
+	color: white;
+	text-align: center;
+}
+
+.card-container .card .face.fa1 .content a {
+	transition: .5s;
+}
+
+.card-container .card .face.face2 {
+	position: relative;
+	background-color: whitesmoke;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 20px;
+	box-sizing: border-box;
+	box-shadow: 0 20px 50px rgba(0, 0, 0, .8);
+	transform: translateY(-100px);
+}
+
+.card-container .card:hover .face.face2 {
+	transform: translateY(0);
+}
+
+.card-container .card .face.face2 .content p,
+a {
+	font-size: 10pt;
+	margin: 0;
+	padding: 0;
+	color: #333;
+}
+
+.card-container .card .face.face2 .content a {
+	text-decoration: none;
+	color: black;
+	box-sizing: border-box;
+	outline: 1px dashed #333;
+	padding: 10px;
+	margin: 15px 0 0;
+	display: inline-block;
+}
+
+.card-container .card .face.face2 .content a:hover {
+	background-color: pink;
+	color: black;
+	box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+
+@media only screen and (max-width: 1250px) {
+	.card-container {
+		flex-direction: column;
+		align-items: center;
+	}
+}
+
+/* -------------------------------------------------------------- */
+/* Style for container-5 [content -> next year birthday countdown website] */
+/* -------------------------------------------------------------- */
+
+.container-5{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container-5 P{
+    color: antiquewhite;
+    margin: 10px 0px;
+}
+
+
+/* -------------------------------------------------------------- */
+/* Style for container-6 [content -> login & signup message and login page button] */
+/* -------------------------------------------------------------- */
+
+.container-6{
+    margin: 30px 0px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-6 .login-sign_up-message{
+    margin: 10px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-6 .login-sign_up-message p{
+    color: antiquewhite;
+    margin: 0;
+}
+
+.container-6 .login-page{
+    margin: 10px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-6 .login-page p{
+    color: blanchedalmond;
+    margin: 10px 0px;
+}
+
+
+
+/* -------------------------------------------------------------- */
+/* Style for footer [content -> social links & copyright message] */
+/* -------------------------------------------------------------- */
+
+footer .social {
+    width: 100vw;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.social .my-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 15vh;
+    width: 600px;
+}
+
+.social .my-container i{
+    font-size: 2em;
+    background-color: #18191f;
+    color: #fff;
+    box-shadow: 2px 2px 2px #00000080, 10px 1px 12px #00000080,
+        2px 2px 10px #00000080, 2px 2px 3px #00000080, inset 2px 2px 10px #00000080,
+        inset 2px 2px 10px #00000080, inset 2px 2px 10px #00000080,
+        inset 2px 2px 10px #00000080;
+    border-radius: 29px;
+    padding: 11px 19px;
+    margin: auto;
+    animation: animate-2 3s linear infinite;
+    text-shadow: 0 0 50px #0072ff, 0 0 100px #0072ff, 0 0 150px #0072ff,
+        0 0 200px #0072ff;
+
+        cursor: pointer;
+}
+
+.social .my-container i:hover{
+    font-size: 2.5em;
+}
+
+#twitter {
+    animation-delay: 0.3s;
+}
+
+#facebook {
+    animation-delay: 0.7s;
+}
+
+#github {
+    animation-delay: 0.1s;
+}
+
+footer .social p{
+    margin: 0px 0px 20px;
+    font-size: 15px;
+    color: aliceblue;
+}
+
+
+@keyframes animate-2 {
+    from {
+        filter: hue-rotate(0deg);
+    }
+
+    to {
+        filter: hue-rotate(360deg);
+    }
+}
+
+@media only screen and (max-width : 750px) {
+
+    .social .my-container i {
+        font-size: 1.5em;
+    }
+
+    .social .my-container {
+        width: 300px;
+    }
+
+    .social .my-container i:hover{
+        font-size: 2em;
+    }
+}
+
+@media only screen and (max-width : 310px) {
+
+    .social .my-container i {
+        font-size: 1em;
+    }
+
+    .social .my-container {
+        width: 200px;
+    }
+
+    .social .my-container i:hover{
+        font-size: 1.5em;
+    }
+}
