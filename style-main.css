@@ -101,7 +101,7 @@ hr {
     position: fixed;
     top: 0px;
     bottom: 0px;
-    background-image: url("./01_home-background-image.jpg");
+    background-image: url("01_home-background-image.jpg");
     filter: blur(8px);
     background-position: 7% 0%;
     background-repeat: no-repeat;
