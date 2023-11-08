@@ -1,6 +1,5 @@
 
 
-
 // Bouncing clock js code - homepage
 
 window.addEventListener("DOMContentLoaded",() => {
@@ -85,7 +84,3 @@ class BouncyBlockClock {
 		if (!this.time.a.length) this.time.a = [...this.time.b];
 	}
 }
-
-
-// For - login page
-
